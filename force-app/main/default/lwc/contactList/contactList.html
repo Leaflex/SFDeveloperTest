@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Contact List">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={contacts} for:item="contact">
+                    <tr key={contact.Id}>
+                        <td>{contact.Name}</td>
+                        <td>{contact.Email}</td>
+                        <td>
+                            <button  
+                                    onclick={handleEdit}
+                                    data-id={contact.Id}>Edit</button>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
